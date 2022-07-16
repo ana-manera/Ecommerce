@@ -11,7 +11,7 @@ import {
 const Card = ({ img, title, price }) => {
   console.log('img')
   return (
-    <Center py={12}>
+    <Center py={12} maxW="350px">
       <Box
         role={'group'}
         p={6}

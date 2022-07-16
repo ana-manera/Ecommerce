@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 import { MoonIcon, SunIcon } from '@chakra-ui/icons'
 import {
   Box,
@@ -8,9 +10,14 @@ import {
   useColorMode,
   ButtonGroup,
 } from '@chakra-ui/react'
+import { BsCart3, BsPerson } from 'react-icons/bs'
 import { Link } from 'react-router-dom'
 
 const Header = () => {
+  const [cart, setCart] = useState(0)
+  const addProduct = () => {
+    setCart(cart + 1)
+  }
   const { colorMode, toggleColorMode } = useColorMode()
   return (
     <>
@@ -31,10 +38,16 @@ const Header = () => {
                   {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
                 </Button>
                 <Button>
-                  <Link to="/carrito">Carrito</Link>
+                  <BsCart3>
+                    {' Corregir urgente '}
+                    Carrito ({cart}) onClick={() => addProduct()}
+                    {'Corregir urgente  '}
+                  </BsCart3>
                 </Button>
 
-                <Button>Usuario</Button>
+                <Button>
+                  <BsPerson> </BsPerson>
+                </Button>
               </ButtonGroup>
             </Stack>
           </Flex>
