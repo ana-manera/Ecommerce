@@ -1,6 +1,16 @@
 import { Container } from '@chakra-ui/react'
 
-const Main = () => {
-  return <Container>Esto es el main</Container>
+const Main = ({ children }) => {
+  return (
+    <Container
+      maxW="container.xl"
+      bg="gray.200"
+      centerContent
+      m="auto"
+      h="-webkit-fit-content"
+    >
+      {children}
+    </Container>
+  )
 }
 export default Main

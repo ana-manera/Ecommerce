@@ -1,17 +1,14 @@
-import { Link } from 'react-router-dom'
-
+import ListOfProduct from '../../components/list-of-product'
 import Layout from '../../layout'
+import Carousel from './carousel'
 
 const Home = () => {
   return (
     <Layout>
       <main>
-        <h2>Welcome to the homepage!</h2>
-        <p>You can do this, I believe in you.</p>
+        <Carousel />
+        <ListOfProduct />
       </main>
-      <nav>
-        <Link to="/about">About</Link>
-      </nav>
     </Layout>
   )
 }

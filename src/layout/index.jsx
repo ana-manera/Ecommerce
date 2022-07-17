@@ -4,11 +4,11 @@ import Footer from './footer'
 import Header from './header'
 import Main from './main'
 
-const Layout = () => {
+const Layout = ({ children }) => {
   return (
     <Stack>
       <Header />
-      <Main />
+      <Main>{children}</Main>
       <Footer />
     </Stack>
   )
