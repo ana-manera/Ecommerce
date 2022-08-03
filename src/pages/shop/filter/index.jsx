@@ -12,7 +12,7 @@ import {
 
 const Filters = () => {
   return (
-    <Container bg="white" w="100%" p={4} color="black">
+    <Container bg="white" w="30%" p={4} color="black">
       <Heading as="h2" size="xl">
         Productos
       </Heading>

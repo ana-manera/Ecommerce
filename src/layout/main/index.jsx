@@ -4,10 +4,10 @@ const Main = ({ children }) => {
   return (
     <Container
       maxW="container.xl"
-      bg="gray.200"
       centerContent
       m="auto"
       h="-webkit-fit-content"
+      bg="gray"
     >
       {children}
     </Container>

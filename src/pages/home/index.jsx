@@ -1,14 +1,15 @@
 import ListOfProduct from '../../components/list-of-product'
 import Layout from '../../layout'
+import Main from '../../layout/main'
 import Carousel from './carousel'
 
 const Home = () => {
   return (
     <Layout>
-      <main>
+      <Main>
         <Carousel />
         <ListOfProduct />
-      </main>
+      </Main>
     </Layout>
   )
 }

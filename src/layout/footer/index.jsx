@@ -36,8 +36,9 @@ const SocialButton = ({ children, label, href }) => {
 const Footer = () => {
   return (
     <Box
-      bg={useColorModeValue('gray.50', 'gray.900')}
+      bg={useColorModeValue('red', 'gray.900')}
       color={useColorModeValue('gray.700', 'gray.200')}
+      h="-moz-min-content"
     >
       <Container
         as={Stack}

@@ -5,7 +5,7 @@ import axios from 'axios'
 
 import Card from '../Card'
 
-const ListOfProduct = () => {
+const ListOfProduct = ({ offPage, elementsForPage }) => {
   const [data, setData] = useState()
 
   useEffect(() => {
@@ -28,7 +28,7 @@ const ListOfProduct = () => {
       m="2"
     >
       {data &&
-        data.data.map((product) => {
+        [...data.data].splice(offPage, elementsForPage).map((product) => {
           return (
             <Card
               key={product.id}
