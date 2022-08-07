@@ -46,3 +46,15 @@ export default useGet
 //   return { data, page, setPage, meta, title, setTitle }
 // }
 // export default useGet
+
+// AXIOS ORIGINAL
+// const [data, setData] = useState()
+// useEffect(() => {
+//   const getInfo = async () => {
+//     const response = await axios.get(
+//       'https://strapiecommerce-production-ddba.up.railway.app/api/products?populate[0]=image'
+//     )
+//     setData(response.data)
+//   }
+//   getInfo()
+// }, [])

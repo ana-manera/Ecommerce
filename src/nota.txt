@@ -18,7 +18,6 @@ const ListOfProduct = () => {
         [...data.data].map((product) => {
           return (
             <Card
-              product={product}
               key={product.id}
               title={product.attributes.title}
               img={product.attributes.image.data.attributes.url}
