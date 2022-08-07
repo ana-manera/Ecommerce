@@ -13,7 +13,7 @@ import {
 } from '@chakra-ui/react'
 import { ImBin } from 'react-icons/im'
 
-import { useCart } from '../../Hooks/useCart'
+import useCart from '../../../hook/useCart'
 
 const Cart = () => {
   const { deleteAllProducts, dataCart, addProduct } = useCart()
@@ -66,4 +66,4 @@ const Cart = () => {
   )
 }
 
-export { Cart }
+export default Cart

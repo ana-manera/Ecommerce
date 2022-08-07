@@ -4,7 +4,7 @@ import {
   BsFillArrowRightSquareFill,
 } from 'react-icons/bs'
 
-const Paginado = ({ setPage, page, LastPage }) => {
+const Paginado = ({ setPage, page, meta }) => {
   return (
     <Flex>
       <Box>
@@ -25,7 +25,7 @@ const Paginado = ({ setPage, page, LastPage }) => {
           size="lg"
           icon={<BsFillArrowRightSquareFill />}
           onClick={() => setPage(page + 1)}
-          disabled={page === LastPage}
+          disabled={page === meta?.pageCount}
         />
       </Box>
     </Flex>

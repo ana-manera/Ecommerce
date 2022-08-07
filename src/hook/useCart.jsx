@@ -1,6 +1,6 @@
 import { useRecoilValue, useSetRecoilState } from 'recoil'
 
-import { CartState } from '../Recoil'
+import CartState from '../recoil/atom/CartState'
 
 const useCart = () => {
   const setCartState = useSetRecoilState(CartState)
@@ -31,4 +31,4 @@ const useCart = () => {
   }
 }
 
-export { useCart }
+export default useCart

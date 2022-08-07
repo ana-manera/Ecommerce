@@ -1,13 +1,14 @@
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 import { Flex } from '@chakra-ui/react'
 import axios from 'axios'
 
+// import useGet from '../../hook/useGet'
 import Card from '../Card'
 
-const ListOfProduct = ({ offPage, elementsForPage }) => {
+const ListOfProduct = () => {
+  // const { data } = useGet(`products/?populate[0]=image`)
   const [data, setData] = useState()
-
   useEffect(() => {
     const getInfo = async () => {
       const response = await axios.get(
@@ -23,12 +24,11 @@ const ListOfProduct = ({ offPage, elementsForPage }) => {
       justifyContent="space-around"
       maxW="container.xl"
       bg="green.400"
-      color="#262626"
       centerContent
       m="2"
     >
       {data &&
-        [...data.data].splice(offPage, elementsForPage).map((product) => {
+        [...data.data].map((product) => {
           return (
             <Card
               key={product.id}

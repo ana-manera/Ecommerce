@@ -1,15 +1,16 @@
+import { Flex } from '@chakra-ui/layout'
+
 import ListOfProduct from '../../components/list-of-product'
 import Layout from '../../layout'
-import Main from '../../layout/main'
 import Carousel from './carousel'
 
 const Home = () => {
   return (
     <Layout>
-      <Main>
+      <Flex w={'100%'} direction={'column'}>
         <Carousel />
         <ListOfProduct />
-      </Main>
+      </Flex>
     </Layout>
   )
 }

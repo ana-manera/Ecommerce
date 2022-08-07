@@ -4,4 +4,4 @@ const CartState = atom({
   key: 'cart',
   default: [],
 })
-export default { CartState }
+export default CartState

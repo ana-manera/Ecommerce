@@ -27,7 +27,7 @@ const settings = {
   slidesToScroll: 1,
 }
 
-export default function CaptionCarousel() {
+const Carousel = () => {
   // As we have used custom buttons, we need a reference variable to
   // change the state
   const [slider, setSlider] = useState(null)
@@ -44,7 +44,7 @@ export default function CaptionCarousel() {
       title: ' ',
       text: '',
       image:
-        'https://www.carosilvabertolo.com/wp-content/uploads/sites/8/2021/07/deco.jpg',
+        'https://images.unsplash.com/photo-1507237998874-b4d52d1dd655?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDR8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=900&q=60',
     },
     {
       title: '',
@@ -55,17 +55,18 @@ export default function CaptionCarousel() {
     {
       title: '',
       text: '',
-      image: 'https://www.delikatissen.com/wp-content/2020/03/0-16.jpg',
+      image:
+        'https://images.unsplash.com/photo-1507237998874-b4d52d1dd655?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDR8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=900&q=60',
     },
   ]
 
   return (
     <Box
       position={'relative'}
-      height={'40%'}
-      width={'100%'}
+      height={'20%'}
+      width={'98%'}
       overflow={'hidden'}
-      m={'auto'}
+      m={'1%'}
     >
       {/* CSS files for react-slick */}
       <link
@@ -141,3 +142,4 @@ export default function CaptionCarousel() {
     </Box>
   )
 }
+export default Carousel

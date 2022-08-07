@@ -7,6 +7,7 @@ import {
   Stack,
   Image,
 } from '@chakra-ui/react'
+import { Link, Link as ReactLink } from 'react-router-dom'
 
 const Card = ({ img, title, price }) => {
   console.log('img')
@@ -23,6 +24,8 @@ const Card = ({ img, title, price }) => {
         pos={'relative'}
         zIndex={1}
       >
+        <Link as={ReactLink} to={`/producto/${title.id}`} />
+
         <Box
           rounded={'lg'}
           mt={0}

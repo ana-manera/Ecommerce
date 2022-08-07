@@ -7,40 +7,36 @@ import {
   DrawerContent,
   DrawerCloseButton,
   Button,
-  Input,
   useDisclosure,
+  Text,
 } from '@chakra-ui/react'
+import { BsCart3 } from 'react-icons/bs'
 
-const Carrito = () => {
+import Cart from './cart'
+
+const Botoncart = ({ dataCart }) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (
     <>
       <Button colorScheme="blue" onClick={onOpen}>
-        Carrito
-      </Button>
-      <Button colorScheme="teal" onClick={onOpen}>
-        Open
+        <BsCart3 />
       </Button>
       <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />
-          <DrawerHeader>Create your account</DrawerHeader>
-
+          <DrawerHeader>Mi Carrito</DrawerHeader>
           <DrawerBody>
-            <Input placeholder="Type here..." />
+            {!!dataCart.length || (
+              <Text> No hay productos en el carrito ☹️</Text>
+            )}
+            {!!dataCart.length && <Cart />}
           </DrawerBody>
-
-          <DrawerFooter>
-            <Button variant="outline" mr={3} onClick={onClose}>
-              Cancel
-            </Button>
-            <Button colorScheme="blue">Save</Button>
-          </DrawerFooter>
+          <DrawerFooter />
         </DrawerContent>
       </Drawer>
     </>
   )
 }
-export default Carrito
+export default Botoncart
