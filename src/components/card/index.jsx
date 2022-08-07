@@ -9,7 +9,7 @@ import {
 } from '@chakra-ui/react'
 import { Link, Link as ReactLink } from 'react-router-dom'
 
-const Card = ({ img, title, price }) => {
+const Card = ({ img, title, price, key }) => {
   console.log('img')
   return (
     <Center py={12} maxW="350px">
@@ -24,7 +24,7 @@ const Card = ({ img, title, price }) => {
         pos={'relative'}
         zIndex={1}
       >
-        <Link as={ReactLink} to={`/producto/${title.id}`} />
+        <Link as={ReactLink} to={`/producto/${key}`} />
 
         <Box
           rounded={'lg'}

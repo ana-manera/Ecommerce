@@ -1,23 +1,23 @@
-import { useEffect, useState } from 'react'
+// import { useEffect, useState } from 'react'
 
 import { Flex } from '@chakra-ui/react'
-import axios from 'axios'
+// import axios from 'axios'
 
-// import useGet from '../../hook/useGet'
+import useGet from '../../hook/useGet'
 import Card from '../Card'
 
 const ListOfProduct = () => {
-  // const { data } = useGet(`products/?populate[0]=image`)
-  const [data, setData] = useState()
-  useEffect(() => {
-    const getInfo = async () => {
-      const response = await axios.get(
-        'https://strapiecommerce-production-ddba.up.railway.app/api/products?populate[0]=image'
-      )
-      setData(response.data)
-    }
-    getInfo()
-  }, [])
+  const { data } = useGet(`products/?populate[0]=image`)
+  // const [data, setData] = useState()
+  // useEffect(() => {
+  //   const getInfo = async () => {
+  //     const response = await axios.get(
+  //       'https://strapiecommerce-production-ddba.up.railway.app/api/products?populate[0]=image'
+  //     )
+  //     setData(response.data)
+  //   }
+  //   getInfo()
+  // }, [])
   return (
     <Flex
       flexWrap="wrap"

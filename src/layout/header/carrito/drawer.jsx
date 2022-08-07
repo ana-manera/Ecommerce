@@ -12,15 +12,17 @@ import {
 } from '@chakra-ui/react'
 import { BsCart3 } from 'react-icons/bs'
 
+import useCart from '../../../hook/useCart'
 import Cart from './cart'
 
-const Botoncart = ({ dataCart }) => {
+const Botoncart = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
+  const { dataCart } = useCart()
 
   return (
     <>
       <Button colorScheme="blue" onClick={onOpen}>
-        <BsCart3 />
+        <BsCart3 /> ({dataCart.length})
       </Button>
       <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
         <DrawerOverlay />
