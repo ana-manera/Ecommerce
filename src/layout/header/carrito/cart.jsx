@@ -10,13 +10,16 @@ import {
   NumberInputStepper,
   NumberIncrementStepper,
   NumberDecrementStepper,
+  Divider,
 } from '@chakra-ui/react'
 import { ImBin } from 'react-icons/im'
+import { Link } from 'react-router-dom'
 
 import useCart from '../../../hook/useCart'
 
 const Cart = () => {
-  const { deleteAllProducts, dataCart, addProduct, deleteProduct } = useCart()
+  const { deleteAllProducts, dataCart, addProduct, deleteProduct, total } =
+    useCart()
   if (!dataCart.length) return null
   return (
     <>
@@ -24,38 +27,55 @@ const Cart = () => {
         return (
           <>
             <Flex>
-              <Heading size="md">{item.title}</Heading>
-              <Button
-                colorScheme="red"
-                variant="ghost"
-                onClick={() => deleteProduct(item.id)}
-              >
-                <ImBin size="xs" />
-              </Button>
-            </Flex>
-            <Flex gap="30">
               <Image
                 src={item.image.data.attributes.url}
                 objectFit="cover"
                 // alt={"imagen del producto"${item.title}}
                 w="80px"
+                mr={'1%'}
               />
-              <Box>
-                <Heading size="xs"> ${item.price} </Heading>
-                <Text>Cantidad: </Text>
-              </Box>
-              <NumberInput defaultValue={item.cant} min={1} max={item.stock}>
-                <NumberInputField />
-                <NumberInputStepper>
-                  <NumberIncrementStepper onClick={() => addProduct(item)} />
-                  <NumberDecrementStepper />
-                </NumberInputStepper>
-              </NumberInput>
+              <Flex direction={'column'} w={'100%'}>
+                <Flex justify="space-between">
+                  <Heading size="md">{item.title}</Heading>
+                  <Button
+                    size={'xs'}
+                    colorScheme="red"
+                    variant="ghost"
+                    onClick={() => deleteProduct(item.id)}
+                  >
+                    <ImBin size="xs" />
+                  </Button>
+                </Flex>
+                <Box>
+                  <Text size="sm" m="1%">
+                    ${item.price}
+                  </Text>
+                </Box>
+                <Flex justify="space-between">
+                  <Text>Cantidad: </Text>
+                  <Box w={'50%'}>
+                    <NumberInput
+                      defaultValue={item.cant}
+                      min={1}
+                      max={item.stock}
+                    >
+                      <NumberInputField />
+                      <NumberInputStepper>
+                        <NumberIncrementStepper
+                          onClick={() => addProduct(item)}
+                        />
+                        <NumberDecrementStepper />
+                      </NumberInputStepper>
+                    </NumberInput>
+                  </Box>
+                </Flex>
+              </Flex>
             </Flex>
+            <Divider my={'4%'} />
           </>
         )
       })}
-      <Flex direction="column" align="flex-start" w="100%">
+      <Flex direction="column" align="flex-end" w="100%">
         <Button
           w="100%"
           colorScheme="red"
@@ -65,7 +85,12 @@ const Cart = () => {
         >
           <Text p="4"> Vaciar carrito </Text> <ImBin />
         </Button>
-        <Heading> Total: </Heading>
+        <Heading size={'md'}> Total: $ {total} </Heading>
+        <Link to={`checkout`}>
+          <Button w="100%" colorScheme="teal" variant="solid" my="5">
+            <Text p="4"> Continuar Compra </Text>
+          </Button>
+        </Link>
       </Flex>
     </>
   )

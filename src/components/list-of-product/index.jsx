@@ -12,7 +12,7 @@ const ListOfProduct = () => {
       maxW="container.xl"
       bg="green.400"
       centerContent
-      m="2%"
+      mx="2%"
     >
       {data &&
         [...data.data].map((product) => {

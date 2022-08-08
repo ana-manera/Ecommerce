@@ -5,6 +5,8 @@ import CartState from '../recoil/atom/CartState'
 const useCart = () => {
   const setCartState = useSetRecoilState(CartState)
   const dataCart = useRecoilValue(CartState)
+  const calcularTotal = (cart) =>
+    cart.reduce((total, product) => total + product.price * product.cant, 0)
 
   const addProduct = (product) => {
     setCartState((cart) => {
@@ -21,16 +23,18 @@ const useCart = () => {
       }
     })
   }
-
-  const deleteAllProducts = () => setCartState([])
   const deleteProduct = (product) => {
-    return product.filter((pr) => pr.id !== product.id)
+    setCartState.filter((pr) => pr.id !== product.id)
   }
+  const deleteAllProducts = () => setCartState([])
+  const total = calcularTotal(dataCart)
+
   return {
     dataCart,
     addProduct,
     deleteAllProducts,
     deleteProduct,
+    total,
   }
 }
 
