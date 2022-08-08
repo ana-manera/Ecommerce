@@ -41,7 +41,7 @@ const Cart = () => {
                     size={'xs'}
                     colorScheme="red"
                     variant="ghost"
-                    onClick={() => deleteProduct(item.id)}
+                    onClick={() => deleteProduct(item)}
                   >
                     <ImBin size="xs" />
                   </Button>
@@ -86,7 +86,7 @@ const Cart = () => {
           <Text p="4"> Vaciar carrito </Text> <ImBin />
         </Button>
         <Heading size={'md'}> Total: $ {total} </Heading>
-        <Link to={`checkout`}>
+        <Link to={`/checkout`}>
           <Button w="100%" colorScheme="teal" variant="solid" my="5">
             <Text p="4"> Continuar Compra </Text>
           </Button>

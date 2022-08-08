@@ -24,11 +24,11 @@ const useCart = () => {
     })
   }
   const deleteProduct = (product) => {
-    setCartState.filter((pr) => pr.id !== product.id)
+    console.log(product)
+    setCartState(dataCart.filter((pr) => pr.id !== product.id))
   }
   const deleteAllProducts = () => setCartState([])
   const total = calcularTotal(dataCart)
-
   return {
     dataCart,
     addProduct,
