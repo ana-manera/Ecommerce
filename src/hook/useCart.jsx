@@ -23,11 +23,14 @@ const useCart = () => {
   }
 
   const deleteAllProducts = () => setCartState([])
-
+  const deleteProduct = (product) => {
+    return product.filter((pr) => pr.id !== product.id)
+  }
   return {
     dataCart,
     addProduct,
     deleteAllProducts,
+    deleteProduct,
   }
 }
 

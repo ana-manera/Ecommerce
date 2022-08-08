@@ -7,7 +7,6 @@ import {
   Stack,
   Image,
 } from '@chakra-ui/react'
-// import { Link } from 'react-router-dom'
 import { Link, Link as ReactLink } from 'react-router-dom'
 
 const Card = ({ img, title, price, product }) => {

@@ -16,7 +16,7 @@ import { ImBin } from 'react-icons/im'
 import useCart from '../../../hook/useCart'
 
 const Cart = () => {
-  const { deleteAllProducts, dataCart, addProduct } = useCart()
+  const { deleteAllProducts, dataCart, addProduct, deleteProduct } = useCart()
   if (!dataCart.length) return null
   return (
     <>
@@ -28,13 +28,18 @@ const Cart = () => {
               <Button
                 colorScheme="red"
                 variant="ghost"
-                // onClick={() => deleteProduct(product.id)}
+                onClick={() => deleteProduct(item.id)}
               >
                 <ImBin size="xs" />
               </Button>
             </Flex>
             <Flex gap="30">
-              <Image src={item.image.data.attributes.url} w="80px" />
+              <Image
+                src={item.image.data.attributes.url}
+                objectFit="cover"
+                // alt={"imagen del producto"${item.title}}
+                w="80px"
+              />
               <Box>
                 <Heading size="xs"> ${item.price} </Heading>
                 <Text>Cantidad: </Text>
