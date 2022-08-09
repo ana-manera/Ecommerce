@@ -1,26 +1,26 @@
 import {
   Heading,
   Input,
-  RangeSlider,
-  RangeSliderTrack,
-  RangeSliderFilledTrack,
-  RangeSliderThumb,
-  Text,
-  Switch,
+  // RangeSlider,
+  // RangeSliderTrack,
+  // RangeSliderFilledTrack,
+  // RangeSliderThumb,
+  // Text,
+  // Switch,
   Container,
 } from '@chakra-ui/react'
 
 const Filters = ({ setTitle }) => {
   return (
-    <Container bg="white" w="100%" p={4} color="black">
-      <Heading as="h2" size="xl">
+    <Container w="100%" p={4}>
+      <Heading as="h2" size="xl" mb="3">
         Productos
       </Heading>
       <Input
         placeholder="Buscar..."
         onChange={(e) => setTitle(e.target.value)}
       />
-      <Heading as="h4" size="md" m="7px">
+      {/* <Heading as="h4" size="md" m="7px">
         Filtrar por precio
       </Heading>
       <RangeSlider aria-label={['min', 'max']} defaultValue={[0, 300000]}>
@@ -34,7 +34,7 @@ const Filters = ({ setTitle }) => {
       <Heading as="h4" size="md">
         Unidades disponibles
       </Heading>
-      <Switch id="producto-disponible" />
+      <Switch id="producto-disponible" /> */}
     </Container>
   )
 }

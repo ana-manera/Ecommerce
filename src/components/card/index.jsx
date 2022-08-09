@@ -1,12 +1,4 @@
-import {
-  Box,
-  Center,
-  useColorModeValue,
-  Heading,
-  Text,
-  Stack,
-  Image,
-} from '@chakra-ui/react'
+import { Box, Center, Heading, Text, Stack, Image } from '@chakra-ui/react'
 import { Link, Link as ReactLink } from 'react-router-dom'
 
 const Card = ({ img, title, price, product }) => {
@@ -18,7 +10,7 @@ const Card = ({ img, title, price, product }) => {
           p={6}
           maxW={'230px'}
           w={'full'}
-          bg={useColorModeValue('white', 'gray.800')}
+          bgGradient="linear(to-r, teal.500, green.500)"
           boxShadow={'2xl'}
           rounded={'lg'}
           pos={'relative'}
