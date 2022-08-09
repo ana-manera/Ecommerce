@@ -9,7 +9,7 @@ import {
   ButtonGroup,
   Heading,
 } from '@chakra-ui/react'
-import { BsPerson } from 'react-icons/bs'
+// import { BsPerson } from 'react-icons/bs'
 import { Link } from 'react-router-dom'
 
 import Botoncart from './carrito/drawer'
@@ -36,9 +36,9 @@ const Header = () => {
                   {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
                 </Button>
                 <Botoncart />
-                <Button variant="ghost">
+                {/* <Button variant="ghost">
                   <BsPerson> </BsPerson>
-                </Button>
+                </Button> */}
               </ButtonGroup>
             </Stack>
           </Flex>

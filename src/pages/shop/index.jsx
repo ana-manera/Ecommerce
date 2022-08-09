@@ -6,7 +6,7 @@ import Layout from '../../layout'
 import Filters from './filter'
 import Paginado from './paginado'
 
-const Shop = ({ data }) => {
+const Shop = (data) => {
   const { page, setPage, meta, setTitle } = useGet(`products?populate[0]=image`)
 
   return (

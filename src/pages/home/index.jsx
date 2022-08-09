@@ -7,7 +7,7 @@ import Carousel from './carousel'
 const Home = () => {
   return (
     <Layout>
-      <Flex w={'100%'} direction={'column'} bg="red" align={'stretch'}>
+      <Flex w={'100%'} direction={'column'} align={'stretch'}>
         <Carousel />
         <ListOfProduct />
       </Flex>

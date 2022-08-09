@@ -10,7 +10,6 @@ const ListOfProduct = () => {
       flexWrap="wrap"
       justifyContent="space-around"
       maxW="container.xl"
-      bg="green.400"
       centerContent
       mx="2%"
     >
